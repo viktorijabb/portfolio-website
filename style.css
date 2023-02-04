@@ -1,0 +1,262 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', 'Lucida Console', 'Monaco', sans-serif;
+    box-sizing: border-box;
+}   
+
+body{
+    background: #080808;
+    color: #fff
+
+}
+
+#header{
+    width: 100%;
+    height: 100vh;
+    background-image: url(header_bg.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.container{
+    padding: 10px 10%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+nav ul li{
+    display: inline-block; /* content layout is in blocks*/
+    list-style: none;
+    margin: 10px 20px;
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after{ 
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{ /* coloured line appears upon hover*/
+    width: 100%
+}
+
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+}
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+.header-text h1 span{
+    color: #ff004f;
+}
+/*----------about--------*/
+#about{
+    padding: 80px 0;
+    color: #ababab;
+}
+.row{
+    display: flex; /* content layout is in blocks but resizes to optimize UI*/
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 40%;
+}
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15px; /*rounded edges*/
+}
+.about-col-2{
+    flex-basis: 55%;
+}
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative; /*is positioned relative to its normal position*/
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute; /* is positioned relative to the nearest positioned ancestor*/
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+.tab-links.active-link::after{
+    width: 50%;
+}
+.tab-contents ul li{
+    list-style: none; /*no bulletpoints*/
+    margin: 10px 0;
+}
+/*
+.tab-contents ul li span{
+    color:#ff004f;
+    font-size: 14px;
+}
+*/
+#date{
+    color:#ff004f;
+    font-size: 14px;
+}
+#institution{
+    color: rgb(2, 188, 245);
+    opacity: 0.5;
+}
+/*
+#degree{
+}
+*/
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block; /*the tab that is active by default*/
+}
+
+/*----------portfolio---------*/
+#portfolio{
+    padding: 50px 0;
+}
+.work-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 10px;
+    display: block;
+}
+
+.layer{   /*layer on top of each photo on grid*/
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden; /*hides content that exceeds size of container*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer a{  /*LINK ICON FORMATTING*/
+    margin-top: 20px;
+    color: #ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 16px;
+    background: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+/*
+.layer a{               # in case icon doesnt work
+    justify-content: center;
+    text-align: center;
+    margin-top: auto;
+    color: black;
+}
+*/
+.resize {
+    width: 30px;
+    height: auto;
+}
+/*------------------------contact---------------------*/
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    padding-top: 15px;
+    color: #ababab;
+}
+.btn{ /*for both buttons in contact section*/
+    display: inline-block;
+    background: #ff004f;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #080808;
+    width: 125px;
+    margin: 15px 0;
+    padding: 5px;
+}
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}

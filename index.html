@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>document</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<!------------------------------Nav bar------------------------->
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Contacts</a></li>
+<!------------------------------Header text---------------->
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>Software Developer</p>
+                <h1>Hi, I'm <span> Viktorija Blumberga</span></h1>
+            </div>
+        </div>
+    </div>
+<!-----------------------------About----------------------------->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src="MicrosoftTeams-image.jpeg" alt="girl smiling">
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Me</h1>
+                    <p>
+                        I am an aspiring software developer, mostly self taught but guided by close people who have a wealth of coding experience.
+                        I started learning to code out of interest for the field of IT. After completing my first coding exercises and learning the ropes, I found it to be the most intellectually stimulating endeavour I've ever embarked on, and so, my quest to excell at coding began. 
+                    </p>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                        <p class="tab-links" onclick="opentab('education')">Education</p>
+                        <p class="tab-links" onclick="opentab('projects')">Projects</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span id="date">Software Development</span><br>Python(OOP)</li>
+                        <li><span id="date">Web Development</span><br>HTML & CSS</li>
+                    </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span id="date">Nov 2022 - Feb 2023</span><br><span id="institution">HyperionDev</span><br><span id="degree">Engineering Bootcamp</span></li>
+                        <li><span id="date">Sep 2022</span><br><span id="institution">Code Institute</span><br><span id="degree">5 Day Coding Challenge</span></li>
+                        <li><span id="date">Sep 2019 - May 2022</span><br><span id="institution">Anglia Ruskin University</span><br><span id="degree">BSc Business Management (1st)</span></li>
+                    </ul>
+                    </div>
+                    <div class="tab-contents" id="projects">
+                    <ul>
+                        <li href="#"><span id="date">Inventory Management Programme</span></li>
+                        <li href="#"><span id="date">Task Manager</span></li>
+                    </ul>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+<!-------------------------portfolio------------------->
+
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title">My work</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="work-2.jpeg">
+                <div class="layer">
+                <h3>Task Manager</h3>
+                <p>Backend code for a task manager with seperate functionalities for admins and users</p>
+                <a href="https://github.com/viktorijabb/Task-manager"><img src="link-icon.png"></a>
+                <!--------in future:link icon from fontawesome.com-->
+                </div>
+            </div>
+            <div class="work">
+                <img src="work-2.jpeg">
+                <div class="layer">
+                    <h3>Inventory Manager</h3>
+                    <p> Backend code for simple stock inventory management</p>
+                    <a href="https://github.com/viktorijabb/Inventory"><img src="link-icon.png"></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="work-2.jpeg">
+                <div class="layer">
+                    <h3>Coding in progress...</h3>
+                    
+                    <a href="#"><img src="link-icon.png"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!------------------------------contact---------------->
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p>vblumberga@gmail.com</p>
+                <div id="social-icons">
+                    <a href="https://www.linkedin.com/in/laura-viktorija-blumberga-a57556164/"><img class="resize" src="linkedin.png"></a>
+                </div>
+                <a href="#" download class="btn">Download CV</a>
+            </div>
+            <div class="contact-right">
+                <form>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!----------------------------------javascript-->
+<script>
+    var tablinks = document.getElementsByClassName("tab-links")
+    var tabcontents = document.getElementsByClassName("tab-contents")
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link")
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+</script>
+</body>
+</html>
